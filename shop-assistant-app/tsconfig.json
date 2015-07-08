@@ -26,7 +26,13 @@
     ],
     "compileOnSave": true,
     "files": [
+        "./lib/customers/customersComponent.ts",
+        "./lib/location/locationComponent.ts",
+        "./lib/app/appComponent.tsx",
+        "./lib/app/appView.tsx",
+        "./lib/customers/customersView.tsx",
         "./lib/index.tsx",
+        "./lib/location/locationView.tsx",
         "./typings/cycle-react/cycle-react.d.ts",
         "./typings/cycle/core/cycle-core.d.ts",
         "./typings/cycle/web/cycle-web.d.ts",
