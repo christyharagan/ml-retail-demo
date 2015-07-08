@@ -28,6 +28,7 @@
     "typescript": "^1.5.0-beta",
     "ml-admin": "^0.2.0",
     "ml-project": "^0.1.0",
+    "ml-retail-demo-common": "^0.1.0",
     "ml-retail-demo-database": "^0.1.0",
     "ml-typescript-definitions": "^0.2.0",
     "ml-uservices": "^0.2.0",
