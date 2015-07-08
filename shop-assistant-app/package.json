@@ -1,0 +1,40 @@
+{
+  "name": "ml-retail-demo-shop-assistant-app",
+  "version": "0.1.0",
+  "description": "The shop assistant client for the Marklogic Retail Demo",
+  "repository": "christyharagan/ml-retail-demo",
+  "author": {
+    "name": "Christy Haragan",
+    "email": "christy.haragan.github@gmail.com",
+    "url": "https://github.com/christyharagan"
+  },
+  "keywords": [
+    "marklogic",
+    "demo",
+    "retail"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@cycle/core": "^1.0.0",
+    "bootstrap": "^3.3.5",
+    "cycle-react": "^0.27.0",
+    "react": "^0.13.3",
+    "react-bootstrap": "^0.23.7",
+    "react-google-maps": "^1.7.1",
+    "rx": "^2.5.3",
+    "socket.io-client": "^1.3.5",
+    "typescript": "^1.5.0-beta",
+    "ml-admin": "^0.2.0",
+    "ml-project": "^0.1.0",
+    "ml-retail-demo-database": "^0.1.0",
+    "ml-typescript-definitions": "^0.2.0",
+    "ml-uservices": "^0.2.0",
+    "speckle": "^0.1.0",
+    "typescript-schema": "^0.3.0",
+    "uservices": "^0.3.0",
+    "uservices-socket.io-client": "^0.2.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}

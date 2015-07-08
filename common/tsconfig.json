@@ -1,0 +1,51 @@
+{
+    "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "declaration": true,
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "noLib": false,
+        "rootDir": ".",
+        "sourceMap": true,
+        "sourceRoot": ".",
+        "target": "es5",
+        "outDir": "./dist",
+        "experimentalDecorators": true
+    },
+    "filesGlob": [
+        "./lib/**/*.ts",
+        "./node_modules/*/*.d.ts",
+        "./node_modules/rx/ts/rx.binding.d.ts",
+        "./typings/**/*.d.ts",
+        "./gulpfile.ts",
+        "./ml-retail-demo-common.d.ts"
+    ],
+    "compileOnSave": true,
+    "files": [
+        "./lib/index.ts",
+        "./lib/models/customer.ts",
+        "./lib/models/product.ts",
+        "./lib/models/store.ts",
+        "./lib/models/twitter.ts",
+        "./lib/services/customerService.ts",
+        "./lib/services/productService.ts",
+        "./lib/services/storeService.ts",
+        "./lib/services/twitterService.ts",
+        "./node_modules/ml-admin/ml-admin.d.ts",
+        "./node_modules/ml-project/ml-project.d.ts",
+        "./node_modules/ml-typescript-definitions/client.d.ts",
+        "./node_modules/ml-typescript-definitions/server.d.ts",
+        "./node_modules/ml-uservices/ml-uservices.d.ts",
+        "./node_modules/speckle/speckle.d.ts",
+        "./node_modules/typescript-schema/typescript-schema.d.ts",
+        "./node_modules/uservices/uservices.d.ts",
+        "./node_modules/rx/ts/rx.binding.d.ts",
+        "./typings/es6/es6.d.ts",
+        "./typings/gulp/gulp.d.ts",
+        "./typings/node/node.d.ts",
+        "./typings/tsd.d.ts",
+        "./typings/twitter/twitter.d.ts",
+        "./gulpfile.ts",
+        "./ml-retail-demo-common.d.ts"
+    ]
+}

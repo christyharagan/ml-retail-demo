@@ -1,0 +1,34 @@
+{
+  "name": "ml-retail-demo-common",
+  "version": "0.1.0",
+  "description": "The common code for the Marklogic Retail Demo",
+  "repository": "christyharagan/ml-retail-demo",
+  "main": "dist/lib/index.js",
+  "author": {
+    "name": "Christy Haragan",
+    "email": "christy.haragan.github@gmail.com",
+    "url": "https://github.com/christyharagan"
+  },
+  "keywords": [
+    "marklogic",
+    "demo",
+    "retail"
+  ],
+  "typescript": {
+    "definition": "ml-retail-demo-common.d.ts"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "rx": "^2.5.3",
+    "ml-admin": "^0.2.0",
+    "ml-project": "^0.1.0",
+    "ml-typescript-definitions": "^0.2.0",
+    "ml-uservices": "^0.2.0",
+    "speckle": "^0.1.0",
+    "typescript-schema": "^0.3.0",
+    "uservices": "^0.3.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
