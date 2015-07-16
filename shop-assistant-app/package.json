@@ -26,6 +26,7 @@
     "ml-typescript-definitions": "^0.2.0",
     "ml-uservices": "^0.2.0",
     "react": "^0.13.3",
+    "tschuss": "^0.1.0",
     "react-bootstrap": "^0.23.7",
     "react-google-maps": "^1.7.1",
     "rx": "^2.5.3",

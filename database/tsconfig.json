@@ -30,7 +30,6 @@
         "./lib/models/product.ts",
         "./lib/pipelines/productPipeline.ts",
         "./lib/remoteServiceProxies.ts",
-        "./lib/semantics/rulesets.ts",
         "./lib/services/customerService.ts",
         "./lib/services/productService.ts",
         "./lib/services/twitterService.ts",

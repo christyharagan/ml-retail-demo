@@ -1,6 +1,6 @@
 {
   "name": "ml-retail-demo-common",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The common code for the Marklogic Retail Demo",
   "repository": "christyharagan/ml-retail-demo",
   "main": "dist/lib/index.js",
@@ -21,6 +21,7 @@
   "dependencies": {
     "rx": "^2.5.3",
     "ml-admin": "^0.2.0",
+    "tschuss": "^0.1.0",
     "ml-project": "^0.1.0",
     "ml-typescript-definitions": "^0.2.0",
     "ml-uservices": "^0.2.0",
