@@ -1,0 +1,10 @@
+import { ProductService } from './services/productService';
+import { TwitterService } from './services/twitterService';
+import * as s from 'typescript-schema';
+import { Server } from 'ml-uservices';
+import { Client } from 'marklogic';
+import { CustomerService } from 'ml-retail-demo-common';
+export declare function productServiceProxy(client: Client, server: Server): ProductService;
+export declare function customerServiceProxy(client: Client, server: Server): CustomerService;
+export declare function twitterServiceProxy(client: Client, server: Server): TwitterService;
+export declare function twitterSpec(): s.Interface;

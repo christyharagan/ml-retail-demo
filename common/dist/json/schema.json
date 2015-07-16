@@ -1,0 +1,573 @@
+[
+  {
+    "name": "ml-retail-demo-common/index",
+    "types": [],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-common/models/customer",
+    "types": [
+      {
+        "typeKind": 7,
+        "name": "Customer",
+        "members": {
+          "username": {
+            "name": "username",
+            "type": {
+              "typeKind": 0
+            }
+          },
+          "twitterId": {
+            "name": "twitterId",
+            "type": {
+              "typeKind": 0
+            }
+          },
+          "name": {
+            "name": "name",
+            "type": {
+              "typeKind": null,
+              "module": "ml-retail-demo-common/models/customer",
+              "name": "Name"
+            }
+          },
+          "currentLocation": {
+            "name": "currentLocation",
+            "type": {
+              "typeKind": 0
+            }
+          },
+          "loggedIn": {
+            "name": "loggedIn",
+            "type": {
+              "typeKind": 1
+            }
+          }
+        },
+        "extends": [],
+        "parameters": []
+      },
+      {
+        "typeKind": 7,
+        "name": "Name",
+        "members": {
+          "firstName": {
+            "name": "firstName",
+            "type": {
+              "typeKind": 0
+            }
+          },
+          "lastName": {
+            "name": "lastName",
+            "type": {
+              "typeKind": 0
+            }
+          }
+        },
+        "extends": [],
+        "parameters": []
+      }
+    ],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-common/models/product",
+    "types": [
+      {
+        "typeKind": 7,
+        "name": "Product",
+        "members": {
+          "name": {
+            "name": "name",
+            "type": {
+              "typeKind": 0
+            }
+          },
+          "id": {
+            "name": "id",
+            "type": {
+              "typeKind": 0
+            }
+          },
+          "basePrice": {
+            "name": "basePrice",
+            "type": {
+              "typeKind": 2
+            }
+          },
+          "imageUrl": {
+            "name": "imageUrl",
+            "type": {
+              "typeKind": 0
+            }
+          },
+          "description": {
+            "name": "description",
+            "type": {
+              "typeKind": 3
+            }
+          },
+          "categories": {
+            "name": "categories",
+            "type": {
+              "typeKind": 4,
+              "element": {
+                "typeKind": 0
+              }
+            }
+          }
+        },
+        "extends": [],
+        "parameters": []
+      }
+    ],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-common/models/twitter",
+    "types": [
+      {
+        "typeKind": 7,
+        "name": "Tweet",
+        "members": {
+          "message": {
+            "name": "message",
+            "type": {
+              "typeKind": 0
+            }
+          },
+          "id": {
+            "name": "id",
+            "type": {
+              "typeKind": 2
+            }
+          }
+        },
+        "extends": [],
+        "parameters": []
+      }
+    ],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-common/services/customerService",
+    "types": [
+      {
+        "typeKind": 7,
+        "name": "CustomerService",
+        "members": {
+          "register": {
+            "name": "register",
+            "type": {
+              "typeKind": 5,
+              "parameters": [
+                {
+                  "name": "customer",
+                  "type": {
+                    "typeKind": null,
+                    "module": "ml-retail-demo-common/models/customer",
+                    "name": "Customer"
+                  },
+                  "decorators": []
+                }
+              ],
+              "type": {
+                "typeKind": 10,
+                "type": {
+                  "typeKind": null,
+                  "module": "",
+                  "name": "Promise"
+                },
+                "parameters": [
+                  {
+                    "typeKind": 1
+                  }
+                ]
+              }
+            }
+          },
+          "login": {
+            "name": "login",
+            "type": {
+              "typeKind": 5,
+              "parameters": [
+                {
+                  "name": "username",
+                  "type": {
+                    "typeKind": 0
+                  },
+                  "decorators": []
+                }
+              ],
+              "type": {
+                "typeKind": 10,
+                "type": {
+                  "typeKind": null,
+                  "module": "",
+                  "name": "Promise"
+                },
+                "parameters": [
+                  {
+                    "typeKind": 1
+                  }
+                ]
+              }
+            }
+          },
+          "logout": {
+            "name": "logout",
+            "type": {
+              "typeKind": 5,
+              "parameters": [
+                {
+                  "name": "username",
+                  "type": {
+                    "typeKind": 0
+                  },
+                  "decorators": []
+                }
+              ],
+              "type": {
+                "typeKind": 10,
+                "type": {
+                  "typeKind": null,
+                  "module": "",
+                  "name": "Promise"
+                },
+                "parameters": [
+                  {
+                    "typeKind": 1
+                  }
+                ]
+              }
+            }
+          },
+          "updateLocation": {
+            "name": "updateLocation",
+            "type": {
+              "typeKind": 5,
+              "parameters": [
+                {
+                  "name": "username",
+                  "type": {
+                    "typeKind": 0
+                  },
+                  "decorators": []
+                },
+                {
+                  "name": "latLong",
+                  "type": {
+                    "typeKind": 0
+                  },
+                  "decorators": []
+                }
+              ],
+              "type": {
+                "typeKind": 10,
+                "type": {
+                  "typeKind": null,
+                  "module": "",
+                  "name": "Promise"
+                },
+                "parameters": [
+                  {
+                    "typeKind": 3
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "extends": [],
+        "parameters": []
+      }
+    ],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-common/services/productService",
+    "types": [
+      {
+        "typeKind": 7,
+        "name": "SearchResult",
+        "members": {
+          "product": {
+            "name": "product",
+            "type": {
+              "typeKind": null,
+              "module": "ml-retail-demo-common/models/product",
+              "name": "Product"
+            }
+          },
+          "match": {
+            "name": "match",
+            "type": {
+              "typeKind": null,
+              "module": "marklogic",
+              "name": "Match"
+            }
+          }
+        },
+        "extends": [],
+        "parameters": []
+      },
+      {
+        "typeKind": 7,
+        "name": "ProductService",
+        "members": {
+          "searchProducts": {
+            "name": "searchProducts",
+            "type": {
+              "typeKind": 5,
+              "parameters": [
+                {
+                  "name": "query",
+                  "type": {
+                    "typeKind": 0
+                  },
+                  "decorators": []
+                },
+                {
+                  "name": "facetValues",
+                  "type": {
+                    "typeKind": 4,
+                    "element": {
+                      "typeKind": 10,
+                      "type": {
+                        "typeKind": null,
+                        "module": "marklogic",
+                        "name": "FacetValue"
+                      },
+                      "parameters": [
+                        {
+                          "typeKind": 3
+                        }
+                      ]
+                    }
+                  },
+                  "decorators": []
+                }
+              ],
+              "type": {
+                "typeKind": 10,
+                "type": {
+                  "typeKind": null,
+                  "module": "",
+                  "name": "Promise"
+                },
+                "parameters": [
+                  {
+                    "typeKind": 4,
+                    "element": {
+                      "typeKind": null,
+                      "module": "ml-retail-demo-common/services/productService",
+                      "name": "SearchResult"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "getCategories": {
+            "name": "getCategories",
+            "type": {
+              "typeKind": 5,
+              "parameters": [],
+              "type": {
+                "typeKind": 10,
+                "type": {
+                  "typeKind": null,
+                  "module": "",
+                  "name": "Observable"
+                },
+                "parameters": [
+                  {
+                    "typeKind": 4,
+                    "element": {
+                      "typeKind": 10,
+                      "type": {
+                        "typeKind": null,
+                        "module": "marklogic",
+                        "name": "FacetValue"
+                      },
+                      "parameters": [
+                        {
+                          "typeKind": 3
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "extends": [],
+        "parameters": []
+      }
+    ],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-common/services/storeService",
+    "types": [
+      {
+        "typeKind": 7,
+        "name": "StoreService",
+        "members": {
+          "getHighValueCustomers": {
+            "name": "getHighValueCustomers",
+            "type": {
+              "typeKind": 5,
+              "parameters": [
+                {
+                  "name": "lat",
+                  "type": {
+                    "typeKind": 2
+                  },
+                  "decorators": []
+                },
+                {
+                  "name": "long",
+                  "type": {
+                    "typeKind": 2
+                  },
+                  "decorators": []
+                }
+              ],
+              "type": {
+                "typeKind": 10,
+                "type": {
+                  "typeKind": null,
+                  "module": "",
+                  "name": "Observable"
+                },
+                "parameters": [
+                  {
+                    "typeKind": 4,
+                    "element": {
+                      "typeKind": null,
+                      "module": "ml-retail-demo-common/models/customer",
+                      "name": "Customer"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "extends": [],
+        "parameters": []
+      }
+    ],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-common/services/twitterService",
+    "types": [
+      {
+        "typeKind": 7,
+        "name": "TwitterService",
+        "members": {
+          "getTweets": {
+            "name": "getTweets",
+            "type": {
+              "typeKind": 5,
+              "parameters": [
+                {
+                  "name": "username",
+                  "type": {
+                    "typeKind": 0
+                  },
+                  "decorators": []
+                },
+                {
+                  "name": "hashtag",
+                  "type": {
+                    "typeKind": 0
+                  },
+                  "decorators": []
+                }
+              ],
+              "type": {
+                "typeKind": 10,
+                "type": {
+                  "typeKind": null,
+                  "module": "",
+                  "name": "Promise"
+                },
+                "parameters": [
+                  {
+                    "typeKind": 4,
+                    "element": {
+                      "typeKind": null,
+                      "module": "ml-retail-demo-common/models/twitter",
+                      "name": "Tweet"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "extends": [],
+        "parameters": []
+      }
+    ],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-common/twitterService",
+    "types": [
+      {
+        "typeKind": 7,
+        "name": "TwitterService",
+        "members": {
+          "getTweets": {
+            "name": "getTweets",
+            "type": {
+              "typeKind": 5,
+              "parameters": [
+                {
+                  "name": "username",
+                  "type": {
+                    "typeKind": 0
+                  },
+                  "decorators": []
+                },
+                {
+                  "name": "hashtag",
+                  "type": {
+                    "typeKind": 0
+                  },
+                  "decorators": []
+                }
+              ],
+              "type": {
+                "typeKind": 10,
+                "type": {
+                  "typeKind": null,
+                  "module": "",
+                  "name": "Promise"
+                },
+                "parameters": [
+                  {
+                    "typeKind": 4,
+                    "element": {
+                      "typeKind": null,
+                      "module": "ml-retail-demo-common/models/twitter",
+                      "name": "Tweet"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "extends": [],
+        "parameters": []
+      }
+    ],
+    "namespaces": []
+  }
+]

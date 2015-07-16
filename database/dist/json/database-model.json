@@ -1,0 +1,82 @@
+{
+  "databases": {
+    "retail-demo-content": {
+      "name": "retail-demo-content",
+      "triples": true,
+      "defaultRulesets": [
+        "/rules/twitter.rules"
+      ],
+      "forests": [
+        {
+          "name": "retail-demo-content",
+          "database": "retail-demo-content",
+          "host": "christys-macbook-pro.local"
+        }
+      ],
+      "schemaDatabase": "retail-demo-schema",
+      "triggersDatabase": "retail-demo-triggers",
+      "rangeIndices": [
+        {
+          "path": "/categories",
+          "scalarType": "string"
+        }
+      ],
+      "geoIndices": [
+        {
+          "path": "/currentLocation",
+          "pointFormat": "point"
+        }
+      ]
+    },
+    "retail-demo-triggers": {
+      "name": "retail-demo-triggers",
+      "forests": [
+        {
+          "name": "retail-demo-triggers",
+          "database": "retail-demo-triggers",
+          "host": "christys-macbook-pro.local"
+        }
+      ]
+    },
+    "retail-demo-modules": {
+      "name": "retail-demo-modules",
+      "forests": [
+        {
+          "name": "retail-demo-modules",
+          "database": "retail-demo-modules",
+          "host": "christys-macbook-pro.local"
+        }
+      ]
+    },
+    "retail-demo-schema": {
+      "name": "retail-demo-schema",
+      "forests": [
+        {
+          "name": "retail-demo-schema",
+          "database": "retail-demo-schema",
+          "host": "christys-macbook-pro.local"
+        }
+      ]
+    }
+  },
+  "servers": {
+    "retail-demo": {
+      "name": "retail-demo",
+      "host": "christys-macbook-pro.local",
+      "port": 8007,
+      "group": "Default",
+      "modulesDatabase": "retail-demo-modules",
+      "contentDatabase": "retail-demo-content"
+    }
+  },
+  "ruleSets": [
+    {
+      "path": "/rules/twitter.rules",
+      "rules": "PREFIX ms: <http://megastore.com/>\\\n\\\nrule \"isHighValueCustomer\" CONSTRUCT {\\\n  ?customer ms:is ms:highValue\\\n}{\\\n  ?customer ms:tweeted ?tweet .\\\n  ?tweet ms:sentiment ms:positiveSentiment\\\n}"
+    }
+  ],
+  "modulesDatabase": "retail-demo-modules",
+  "schemaDatabase": "retail-demo-schema",
+  "triggersDatabase": "retail-demo-triggers",
+  "contentDatabase": "retail-demo-content"
+}

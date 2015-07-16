@@ -1,0 +1,895 @@
+[
+  {
+    "name": "ml-retail-demo-database/createClient",
+    "types": [],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-database/definition",
+    "types": [
+      {
+        "typeKind": 6,
+        "name": "RetailDemo",
+        "members": {
+          "config": {
+            "name": "config",
+            "type": {
+              "typeKind": null,
+              "module": "ml-project",
+              "name": "Config"
+            },
+            "decorators": []
+          },
+          "server": {
+            "name": "server",
+            "type": {
+              "typeKind": null,
+              "module": "ml-admin",
+              "name": "ServerSpec"
+            },
+            "decorators": []
+          },
+          "contentDatabase": {
+            "name": "contentDatabase",
+            "type": {
+              "typeKind": null,
+              "module": "ml-admin",
+              "name": "DatabaseSpec"
+            },
+            "decorators": [
+              {
+                "decorator": "contentDatabase",
+                "parameters": []
+              }
+            ]
+          },
+          "triggersDatabase": {
+            "name": "triggersDatabase",
+            "type": {
+              "typeKind": null,
+              "module": "ml-admin",
+              "name": "DatabaseSpec"
+            },
+            "decorators": [
+              {
+                "decorator": "triggersDatabase",
+                "parameters": []
+              }
+            ]
+          },
+          "modulesDatabase": {
+            "name": "modulesDatabase",
+            "type": {
+              "typeKind": null,
+              "module": "ml-admin",
+              "name": "DatabaseSpec"
+            },
+            "decorators": [
+              {
+                "decorator": "modulesDatabase",
+                "parameters": []
+              }
+            ]
+          },
+          "schemaDatabase": {
+            "name": "schemaDatabase",
+            "type": {
+              "typeKind": null,
+              "module": "ml-admin",
+              "name": "DatabaseSpec"
+            },
+            "decorators": [
+              {
+                "decorator": "schemaDatabase",
+                "parameters": []
+              }
+            ]
+          },
+          "customerRuleSet": {
+            "name": "customerRuleSet",
+            "type": {
+              "typeKind": 5,
+              "parameters": [],
+              "type": {
+                "typeKind": 0
+              }
+            },
+            "decorators": [
+              {
+                "decorator": "ruleSet",
+                "parameters": [
+                  {
+                    "expressionKind": 4,
+                    "properties": {
+                      "path": {
+                        "expressionKind": 0,
+                        "value": "/rules/twitter.rules"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "implements": [],
+        "decorators": [
+          {
+            "decorator": "mlDeploy",
+            "parameters": []
+          }
+        ],
+        "constructorSchema": {
+          "typeKind": 5,
+          "parameters": [
+            {
+              "name": "config",
+              "type": {
+                "typeKind": null,
+                "module": "ml-project",
+                "name": "Config"
+              },
+              "decorators": []
+            }
+          ]
+        }
+      }
+    ],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-database/index",
+    "types": [],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-database/remoteServiceProxies",
+    "types": [],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-database/models/customer",
+    "types": [
+      {
+        "typeKind": 6,
+        "name": "CustomerLocation",
+        "members": {},
+        "implements": [],
+        "decorators": [],
+        "extends": {
+          "typeKind": null,
+          "module": "ml-admin",
+          "name": "GeoIndex"
+        }
+      },
+      {
+        "typeKind": 6,
+        "name": "MLCustomer",
+        "members": {
+          "username": {
+            "name": "username",
+            "type": {
+              "typeKind": 0
+            },
+            "decorators": []
+          },
+          "name": {
+            "name": "name",
+            "type": {
+              "typeKind": null,
+              "module": "ml-retail-demo-common",
+              "name": "Name"
+            },
+            "decorators": []
+          },
+          "twitterId": {
+            "name": "twitterId",
+            "type": {
+              "typeKind": 0
+            },
+            "decorators": []
+          },
+          "loggedIn": {
+            "name": "loggedIn",
+            "type": {
+              "typeKind": 1
+            },
+            "decorators": []
+          },
+          "currentLocation": {
+            "name": "currentLocation",
+            "type": {
+              "typeKind": 0
+            },
+            "decorators": [
+              {
+                "decorator": "geoIndexed",
+                "parameters": [
+                  {
+                    "expressionKind": 4,
+                    "properties": {
+                      "class": {
+                        "expressionKind": 3,
+                        "module": "ml-retail-demo-database/models/customer",
+                        "name": "CustomerLocation"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "implements": [
+          {
+            "typeKind": null,
+            "module": "ml-retail-demo-common",
+            "name": "Customer"
+          }
+        ],
+        "decorators": []
+      }
+    ],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-database/models/product",
+    "types": [
+      {
+        "typeKind": 6,
+        "name": "CategoriesFacet",
+        "members": {
+          "name": {
+            "name": "name",
+            "type": {
+              "typeKind": 0
+            },
+            "decorators": []
+          },
+          "path": {
+            "name": "path",
+            "type": {
+              "typeKind": 0
+            },
+            "decorators": []
+          }
+        },
+        "implements": [],
+        "decorators": [],
+        "extends": {
+          "typeKind": null,
+          "module": "ml-admin",
+          "name": "Facet"
+        }
+      },
+      {
+        "typeKind": 6,
+        "name": "MLProduct",
+        "members": {
+          "name": {
+            "name": "name",
+            "type": {
+              "typeKind": 0
+            },
+            "decorators": []
+          },
+          "id": {
+            "name": "id",
+            "type": {
+              "typeKind": 0
+            },
+            "decorators": []
+          },
+          "basePrice": {
+            "name": "basePrice",
+            "type": {
+              "typeKind": 2
+            },
+            "decorators": []
+          },
+          "imageUrl": {
+            "name": "imageUrl",
+            "type": {
+              "typeKind": 0
+            },
+            "decorators": []
+          },
+          "description": {
+            "name": "description",
+            "type": {
+              "typeKind": 3
+            },
+            "decorators": []
+          },
+          "categories": {
+            "name": "categories",
+            "type": {
+              "typeKind": 4,
+              "element": {
+                "typeKind": 0
+              }
+            },
+            "decorators": [
+              {
+                "decorator": "rangeIndexed",
+                "parameters": [
+                  {
+                    "expressionKind": 4,
+                    "properties": {
+                      "facet": {
+                        "expressionKind": 3,
+                        "module": "ml-retail-demo-database/models/product",
+                        "name": "CategoriesFacet"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "implements": [
+          {
+            "typeKind": null,
+            "module": "ml-retail-demo-common",
+            "name": "Product"
+          }
+        ],
+        "decorators": []
+      }
+    ],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-database/pipelines/productPipeline",
+    "types": [
+      {
+        "typeKind": 6,
+        "name": "PIMPipeline",
+        "members": {
+          "transform": {
+            "name": "transform",
+            "type": {
+              "typeKind": 5,
+              "parameters": [
+                {
+                  "name": "input",
+                  "type": {
+                    "typeKind": 10,
+                    "type": {
+                      "typeKind": null,
+                      "module": "ml-admin",
+                      "name": "Document"
+                    },
+                    "parameters": [
+                      {
+                        "typeKind": 3
+                      }
+                    ]
+                  },
+                  "decorators": []
+                }
+              ],
+              "type": {
+                "typeKind": 4,
+                "element": {
+                  "typeKind": 10,
+                  "type": {
+                    "typeKind": null,
+                    "module": "ml-admin",
+                    "name": "Document"
+                  },
+                  "parameters": [
+                    {
+                      "typeKind": null,
+                      "module": "ml-retail-demo-database/models/product",
+                      "name": "MLProduct"
+                    }
+                  ]
+                }
+              }
+            },
+            "decorators": []
+          }
+        },
+        "implements": [
+          {
+            "typeKind": 10,
+            "parameters": [
+              {
+                "typeKind": 3
+              },
+              {
+                "typeKind": null,
+                "module": "ml-retail-demo-database/models/product",
+                "name": "MLProduct"
+              }
+            ],
+            "type": {
+              "typeKind": null,
+              "module": "ml-admin",
+              "name": "Pipeline"
+            }
+          }
+        ],
+        "decorators": [
+          {
+            "decorator": "cpf",
+            "parameters": [
+              {
+                "expressionKind": 4,
+                "properties": {
+                  "scope": {
+                    "expressionKind": 0,
+                    "value": "/pim/"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-database/services/customerService",
+    "types": [
+      {
+        "typeKind": 6,
+        "name": "CustomerServiceML",
+        "members": {
+          "login": {
+            "name": "login",
+            "type": {
+              "typeKind": 5,
+              "parameters": [
+                {
+                  "name": "username",
+                  "type": {
+                    "typeKind": 0
+                  },
+                  "decorators": []
+                }
+              ],
+              "type": {
+                "typeKind": 10,
+                "type": {
+                  "typeKind": null,
+                  "module": "",
+                  "name": "Promise"
+                },
+                "parameters": [
+                  {
+                    "typeKind": 1
+                  }
+                ]
+              }
+            },
+            "decorators": [
+              {
+                "decorator": "mlMethod",
+                "parameters": [
+                  {
+                    "expressionKind": 4,
+                    "properties": {
+                      "method": {
+                        "expressionKind": 0,
+                        "value": "put"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "logout": {
+            "name": "logout",
+            "type": {
+              "typeKind": 5,
+              "parameters": [
+                {
+                  "name": "username",
+                  "type": {
+                    "typeKind": 0
+                  },
+                  "decorators": []
+                }
+              ],
+              "type": {
+                "typeKind": 10,
+                "type": {
+                  "typeKind": null,
+                  "module": "",
+                  "name": "Promise"
+                },
+                "parameters": [
+                  {
+                    "typeKind": 1
+                  }
+                ]
+              }
+            },
+            "decorators": [
+              {
+                "decorator": "mlMethod",
+                "parameters": [
+                  {
+                    "expressionKind": 4,
+                    "properties": {
+                      "method": {
+                        "expressionKind": 0,
+                        "value": "put"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "register": {
+            "name": "register",
+            "type": {
+              "typeKind": 5,
+              "parameters": [
+                {
+                  "name": "customer",
+                  "type": {
+                    "typeKind": null,
+                    "module": "ml-retail-demo-common",
+                    "name": "Customer"
+                  },
+                  "decorators": []
+                }
+              ],
+              "type": {
+                "typeKind": 10,
+                "type": {
+                  "typeKind": null,
+                  "module": "",
+                  "name": "Promise"
+                },
+                "parameters": [
+                  {
+                    "typeKind": 1
+                  }
+                ]
+              }
+            },
+            "decorators": [
+              {
+                "decorator": "mlMethod",
+                "parameters": [
+                  {
+                    "expressionKind": 4,
+                    "properties": {
+                      "method": {
+                        "expressionKind": 0,
+                        "value": "put"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "updateLocation": {
+            "name": "updateLocation",
+            "type": {
+              "typeKind": 5,
+              "parameters": [
+                {
+                  "name": "username",
+                  "type": {
+                    "typeKind": 0
+                  },
+                  "decorators": []
+                },
+                {
+                  "name": "latLong",
+                  "type": {
+                    "typeKind": 0
+                  },
+                  "decorators": []
+                }
+              ],
+              "type": {
+                "typeKind": 10,
+                "type": {
+                  "typeKind": null,
+                  "module": "",
+                  "name": "Promise"
+                },
+                "parameters": [
+                  {
+                    "typeKind": 3
+                  }
+                ]
+              }
+            },
+            "decorators": [
+              {
+                "decorator": "mlMethod",
+                "parameters": [
+                  {
+                    "expressionKind": 4,
+                    "properties": {
+                      "method": {
+                        "expressionKind": 0,
+                        "value": "put"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "implements": [
+          {
+            "typeKind": null,
+            "module": "ml-retail-demo-common",
+            "name": "CustomerService"
+          }
+        ],
+        "decorators": [
+          {
+            "decorator": "mlService",
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-database/services/productService",
+    "types": [
+      {
+        "typeKind": 7,
+        "name": "MLProductService",
+        "members": {
+          "updateCategories": {
+            "name": "updateCategories",
+            "type": {
+              "typeKind": 5,
+              "parameters": [],
+              "type": {
+                "typeKind": 10,
+                "type": {
+                  "typeKind": null,
+                  "module": "uservices",
+                  "name": "Observable"
+                },
+                "parameters": [
+                  {
+                    "typeKind": 4,
+                    "element": {
+                      "typeKind": 10,
+                      "type": {
+                        "typeKind": null,
+                        "module": "marklogic",
+                        "name": "FacetValue"
+                      },
+                      "parameters": [
+                        {
+                          "typeKind": 0
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "extends": [],
+        "parameters": []
+      },
+      {
+        "typeKind": 6,
+        "name": "ProductService",
+        "members": {
+          "updateCategories": {
+            "name": "updateCategories",
+            "type": {
+              "typeKind": 5,
+              "parameters": [],
+              "type": {
+                "typeKind": 10,
+                "type": {
+                  "typeKind": null,
+                  "module": "uservices",
+                  "name": "Observable"
+                },
+                "parameters": [
+                  {
+                    "typeKind": 4,
+                    "element": {
+                      "typeKind": 10,
+                      "type": {
+                        "typeKind": null,
+                        "module": "marklogic",
+                        "name": "FacetValue"
+                      },
+                      "parameters": [
+                        {
+                          "typeKind": 0
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            "decorators": [
+              {
+                "decorator": "mlEvent",
+                "parameters": [
+                  {
+                    "expressionKind": 4,
+                    "properties": {
+                      "scope": {
+                        "expressionKind": 0,
+                        "value": "/products/"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "implements": [],
+        "decorators": [
+          {
+            "decorator": "mlService",
+            "parameters": []
+          }
+        ],
+        "extends": {
+          "typeKind": null,
+          "module": "ml-uservices",
+          "name": "MLService"
+        }
+      }
+    ],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-database/services/twitterService",
+    "types": [
+      {
+        "typeKind": 6,
+        "name": "TwitterService",
+        "members": {
+          "updateTweets": {
+            "name": "updateTweets",
+            "type": {
+              "typeKind": 5,
+              "parameters": [],
+              "type": {
+                "typeKind": 10,
+                "type": {
+                  "typeKind": null,
+                  "module": "uservices",
+                  "name": "Observable"
+                },
+                "parameters": [
+                  {
+                    "typeKind": 1
+                  }
+                ]
+              }
+            },
+            "decorators": [
+              {
+                "decorator": "mlEvent",
+                "parameters": [
+                  {
+                    "expressionKind": 4,
+                    "properties": {
+                      "scope": {
+                        "expressionKind": 0,
+                        "value": "/tweets/"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "implements": [],
+        "decorators": [
+          {
+            "decorator": "mlService",
+            "parameters": []
+          }
+        ],
+        "extends": {
+          "typeKind": null,
+          "module": "ml-uservices",
+          "name": "MLService"
+        }
+      }
+    ],
+    "namespaces": []
+  },
+  {
+    "name": "ml-retail-demo-database/tasks/twitter",
+    "types": [
+      {
+        "typeKind": 6,
+        "name": "TwitterTask",
+        "members": {
+          "twitterService": {
+            "name": "twitterService",
+            "type": {
+              "typeKind": null,
+              "module": "ml-retail-demo-common",
+              "name": "TwitterService"
+            },
+            "decorators": []
+          },
+          "fetchTweets": {
+            "name": "fetchTweets",
+            "type": {
+              "typeKind": 5,
+              "parameters": []
+            },
+            "decorators": [
+              {
+                "decorator": "task",
+                "parameters": [
+                  {
+                    "expressionKind": 4,
+                    "properties": {
+                      "frequency": {
+                        "expressionKind": 1,
+                        "value": 1
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "implements": [],
+        "decorators": [
+          {
+            "decorator": "wired",
+            "parameters": [
+              {
+                "expressionKind": 3,
+                "module": "",
+                "name": "__dirname"
+              }
+            ]
+          }
+        ],
+        "constructorSchema": {
+          "typeKind": 5,
+          "parameters": [
+            {
+              "name": "twitterService",
+              "type": {
+                "typeKind": null,
+                "module": "ml-retail-demo-common",
+                "name": "TwitterService"
+              },
+              "decorators": [
+                {
+                  "decorator": "inject",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "namespaces": []
+  }
+]
