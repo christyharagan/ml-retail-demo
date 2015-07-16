@@ -1,6 +1,5 @@
 export * from './models/customer'
 export * from './models/product'
-export * from './models/store'
 export * from './models/twitter'
 export * from './services/customerService'
 export * from './services/productService'

@@ -1,28 +1,24 @@
 import * as b from 'react-bootstrap'
+import * as g from 'react-google-maps'
 import {Location} from './locationComponent'
-import * as React from 'react'
+import * as React from 'react/addons'
 // TODO: Hack to prevent browserfiy removing React. Investigate correct solution
 let r = React
-
-function matchTextToHtml(match: m.Match) {
-  return match['match-text'].map(function(text){
-    let highlighted = text as m.HighlightedText
-
-    if (highlighted.highlight) {
-      return <b>{highlighted.highlight}</b>
-    } else {
-      return highlighted
-    }
-  })
-}
-
+//var google
 export function locationView(context:Location) {
-  return <div>
-    {context.props.results.map(result=>
-      <b.Panel>
-        <h3 href="#" onClick={context.props.onSelect.bind(null, result.product)}>{result.product.name}</h3>
-        {matchTextToHtml(result.match)}
-      </b.Panel>
-    )}
+  return <div style="height:100%">
+    <b.Navbar brand='MegaStore Shop Assistant App' inverse toggleNavKey={0}>
+      <b.Nav right eventKey={0}> {/* This is the eventKey referenced */}
+      </b.Nav>
+    </b.Navbar>
+    <g.GoogleMaps containerProps={{
+      style: {
+        height: "100%"
+      }
+      }}
+      googleMapsApi={google.maps}
+      zoom={8}
+      center={{lat: 51.4, lng: -0.19}}
+      onClick={context.onClick.bind(context)}/>
   </div>
 }

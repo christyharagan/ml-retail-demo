@@ -12,8 +12,8 @@ export class UpdateLocation {
 
   private updateLocation() {
     if (this.username) {
-      navigator.geolocation.getCurrentPosition(doUpdatePosition)
       let self = this
+      navigator.geolocation.getCurrentPosition(doUpdatePosition)
       function doUpdatePosition(position) {
         self.customerService.updateLocation(self.username, `${position.coords.latitude} ${position.coords.longitude}`).then(function(){
           setTimeout(self.updateLocation.bind(self), self.refreshRate)

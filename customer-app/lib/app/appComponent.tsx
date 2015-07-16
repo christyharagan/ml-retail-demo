@@ -5,6 +5,7 @@ import {Driver} from '@cycle/core'
 import {FacetValue as FacetValueWithCount} from 'marklogic'
 import {FacetValue} from 'ml-admin'
 import {UpdateLocation} from '../geolocation/updateLocation'
+import {inject, wired} from 'tschuss'
 
 import {appView} from './appView'
 
@@ -28,14 +29,19 @@ export interface AppState {
   username?: string
 }
 
+@wired(__dirname)
 export class App extends React.Component<AppProps, AppState> {
+  private customerService: CustomerService
+  private productService: ProductService
   private updateLocation:UpdateLocation
 
-  constructor(props) {
+  constructor(props, @inject() customerService?: CustomerService, @inject() productService?: ProductService) {
     super(props)
     this.state = {
       primaryState: PrimaryAppState.LOGIN
     } as AppState
+    this.customerService = customerService
+    this.productService = productService
     this.updateLocation = new UpdateLocation(this.props.customerService, 60000)
   }
 
@@ -61,6 +67,7 @@ export class App extends React.Component<AppProps, AppState> {
           primaryState: PrimaryAppState.PRODUCT,
           username: customer.username
         })
+        self.updateLocation.login(customer.username)
       }
     }, function(error){
       self.props.onError(error)

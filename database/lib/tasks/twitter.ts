@@ -1,34 +1,48 @@
-import {task, FrequencyType} from 'ml-admin'
+import {task, FrequencyType} from 'ml-uservices'
 import {twitterSpec} from '../remoteServiceProxies'
 import {TwitterService, Customer} from 'ml-retail-demo-common'
+import {inject, wired} from 'tschuss'
 
-export class Twitter {
+// TODO Remove this
+exports = {}
+
+@wired(__dirname)
+export class TwitterTask {
+  private twitterService: TwitterService
+
+  constructor(@inject() twitterService?: TwitterService) {
+    this.twitterService = twitterService
+  }
+
   @task({
     type: FrequencyType.MINUTES,
-    frequency: 5,
-    inject: twitterSpec()
+    frequency: 1
   })
-  fetchTweets(twitterService: TwitterService) {
-    declareUpdate()
+  fetchTweets() {
     var sem = require('/MarkLogic/semantics.xqy')
+    declareUpdate()
 
     xdmp.directory('/customers/').toArray().forEach(function(node){
       let customer = <Customer>cts.doc(xdmp.nodeUri(node)).root
-      twitterService.getTweets(customer.twitterId, 'marklogic').then(function(tweets){
+      this.twitterService.getTweets(customer.twitterId, 'marklogic').then(function(tweets){
         if (tweets.length > 0) {
-          xdmp.documentInsert(`/tweets/${customer.username}`, tweets)
-          sem.rdfInsert(
-            sem.triple(
-              sem.iri(`http://megastore.com/customer/${customer.username}`),
-	            sem.iri('http://megastore.com/tweeted'),
-              sem.iri(`http://megastore.com/tweets/${customer.username}`)))
-          sem.rdfInsert(
-            sem.triple(
-              sem.iri(`http://megastore.com/tweets/${customer.username}`)),
-              sem.iri('http://megastore.com/sentiment'),
-              sem.iri('http://megastore.com/positiveSentiment'))
+          for (let i = 0; i < tweets.length; i++) {
+            let tweet = tweets[i]
+            let uri = `/tweets/${tweet.id}.json`
+            if (!cts.doc(uri)) {
+              xdmp.documentInsert(uri, tweet)
+              sem.rdfInsert(
+                sem.triple(
+                  sem.iri(`http://megastore.com/customers/${customer.username}.json`),
+  	              sem.iri('http://megastore.com/tweeted'),
+                  sem.iri(`http://megastore.com/${uri}`)))
+            }
+          }
         }
       })
     })
   }
 }
+
+// TODO Remove
+new TwitterTask().fetchTweets()

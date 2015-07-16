@@ -21,7 +21,7 @@ export function searchResultsView(context:SearchResults) {
   return <div>
     {context.props.results.map(result=>
       <b.Panel>
-        <h3 href="#" onClick={context.props.onSelect.bind(null, result.product)}>{result.product.name}</h3>
+        <a  href="#"><h3 onClick={context.props.onSelect.bind(null, result.product)}>{result.product.name}</h3></a>
         {matchTextToHtml(result.match)}
       </b.Panel>
     )}

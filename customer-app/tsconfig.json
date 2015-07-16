@@ -19,7 +19,6 @@
         "./node_modules/*/*.d.ts",
         "./node_modules/rx/ts/rx.binding.d.ts",
         "./gulpfile.ts",
-        "../database/ml-retail-demo-database.d.ts",
         "./node_modules/@cycle/core/cycle-core.d.ts",
         "./node_modules/@cycle/web/cycle-web.d.ts",
         "./ml-retail-demo-customer-app.d.ts"
@@ -58,15 +57,16 @@
         "./node_modules/ml-project/ml-project.d.ts",
         "./node_modules/ml-retail-demo-app-server/ml-retail-demo-app-server.d.ts",
         "./node_modules/ml-retail-demo-common/ml-retail-demo-common.d.ts",
+        "./node_modules/ml-retail-demo-database/ml-retail-demo-database.d.ts",
         "./node_modules/ml-typescript-definitions/client.d.ts",
         "./node_modules/ml-typescript-definitions/server.d.ts",
         "./node_modules/ml-uservices/ml-uservices.d.ts",
         "./node_modules/speckle/speckle.d.ts",
+        "./node_modules/tschuss/tschuss.d.ts",
         "./node_modules/typescript-schema/typescript-schema.d.ts",
         "./node_modules/uservices-socket.io-client/uservices-socket.io-client.d.ts",
         "./node_modules/uservices/uservices.d.ts",
         "./node_modules/rx/ts/rx.binding.d.ts",
-        "./gulpfile.ts",
-        "../database/ml-retail-demo-database.d.ts"
+        "./gulpfile.ts"
     ]
 }

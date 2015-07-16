@@ -25,7 +25,6 @@
         "./lib/index.ts",
         "./lib/models/customer.ts",
         "./lib/models/product.ts",
-        "./lib/models/store.ts",
         "./lib/models/twitter.ts",
         "./lib/services/customerService.ts",
         "./lib/services/productService.ts",

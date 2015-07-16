@@ -1,3 +1,5 @@
+import {Tweet} from './twitter'
+
 export interface Customer {
   username: string
   twitterId: string

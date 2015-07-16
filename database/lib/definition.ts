@@ -1,5 +1,8 @@
-import {ServerSpec, DatabaseSpec, ForestSpec, mlDeploy, contentDatabase, triggersDatabase, modulesDatabase, schemaDatabase} from 'ml-admin'
+import {ServerSpec, DatabaseSpec, ForestSpec, mlDeploy, contentDatabase, triggersDatabase, modulesDatabase, schemaDatabase, ruleSet} from 'ml-admin'
 import {Config} from 'ml-project'
+//import {RuleSets} from './semantics/rulesets'
+//import {ruleSet} from 'ml-admin'
+import {rule, variable, prefix} from 'speckle'
 
 @mlDeploy()
 export class RetailDemo {
@@ -38,4 +41,18 @@ export class RetailDemo {
   schemaDatabase: DatabaseSpec = {
     name: 'retail-demo-schema'
   }
+
+  @ruleSet({
+    path: '/rules/twitter.rules'
+  })
+  customerRuleSet():string {
+    let megaStore = prefix('ms', 'http://megastore.com/')
+    let customer = variable('customer')
+    let tweet = variable('tweet')
+    return rule('isHighValueCustomer')
+      .when(customer, megaStore.uri('tweeted'), tweet)
+      .and(tweet, megaStore.uri('sentiment'), megaStore.uri('positiveSentiment'))
+      .then(customer, megaStore.uri('is'), megaStore.uri('highValue')).toSparql()
+  }
+//  ruleSets:RuleSets = new RuleSets()
 }

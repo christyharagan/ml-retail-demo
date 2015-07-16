@@ -14,11 +14,6 @@ declare module "ml-retail-demo-common/dist/lib/models/product"{
     export = tmp;
 }
 
-declare module "ml-retail-demo-common/dist/lib/models/store"{
-    import tmp = require('dist/lib/models/store');
-    export = tmp;
-}
-
 declare module "ml-retail-demo-common/dist/lib/models/twitter"{
     import tmp = require('dist/lib/models/twitter');
     export = tmp;

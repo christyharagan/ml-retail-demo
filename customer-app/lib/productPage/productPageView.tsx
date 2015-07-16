@@ -9,13 +9,14 @@ import * as React from 'react'
 let r = React
 
 export function productPageView(context: ProductPage) {
-  return <div className="container">
-      <b.Navbar brand='MegaStore Customer App' inverse toggleNavKey={0}>
-        <b.Nav right eventKey={0}> {/* This is the eventKey referenced */}
-          <b.NavItem eventKey={1} href='#' onClick={context.props.onLogout.bind(context)}>Logout</b.NavItem>
-        </b.Nav>
-      </b.Navbar>
+  return <div>
+    <b.Navbar brand='MegaStore Customer App' inverse toggleNavKey={0}>
+      <b.Nav right eventKey={0}> {/* This is the eventKey referenced */}
+        <b.NavItem eventKey={1} href='#' onClick={context.props.onLogout.bind(context)}>Logout</b.NavItem>
+      </b.Nav>
+    </b.Navbar>
 
+    <b.Grid>
       <b.Row>
           <b.Col xs={12}>
             <search.Search onSearch={context.onSearch.bind(context)}></search.Search>
@@ -35,10 +36,9 @@ export function productPageView(context: ProductPage) {
           }
           </b.Col>
       </b.Row>
-
-    <footer>
-      <p>Copyright (c) Christy Haragan 2015</p>
-    </footer>
+      <footer>
+        <p>Copyright (c) Christy Haragan 2015</p>
+      </footer>
+    </b.Grid>
   </div>
-
 }

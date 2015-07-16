@@ -5,7 +5,13 @@ import * as React from 'react'
 let r = React
 
 export function loginView(context:Login) {
-  return <b.Grid>
+  return <div>
+  <b.Navbar brand='MegaStore Customer App' inverse toggleNavKey={0}>
+    <b.Nav right eventKey={0}> {/* This is the eventKey referenced */}
+    </b.Nav>
+  </b.Navbar>
+
+  <b.Grid>
     <b.Row className='show-grid'>
       <b.Col xs={12}>
         <b.Panel>
@@ -26,5 +32,5 @@ export function loginView(context:Login) {
       </b.Col>
     </b.Row>
   </b.Grid>
-
+  </div>
 }

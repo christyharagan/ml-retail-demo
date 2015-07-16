@@ -1,7 +1,7 @@
 declare class Twitter {
   constructor(config:Twitter.Config)
 
-  get(path:string, options:any, cb:(error:any, tweets:Twitter.Tweets, response:any)=>void)
+  get(path:string, options:any, cb:(error:any, tweets:Twitter.Tweet[], response:any)=>void)
 }
 
 declare module Twitter {
@@ -14,11 +14,6 @@ declare module Twitter {
 
   export interface Tweet {
     text: string
-    id: string
-  }
-
-  export interface Tweets {
-    statuses: Tweet[]
   }
 }
 

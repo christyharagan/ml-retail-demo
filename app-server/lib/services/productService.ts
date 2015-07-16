@@ -3,12 +3,13 @@ import {FacetValue as FacetValueWithCount, Match, Client} from 'marklogic'
 import {IObservable, Observable} from 'rx'
 import {search, getFacetValues, FacetValue} from 'ml-admin'
 import {ProductService as MLProductService, CategoriesFacet} from 'ml-retail-demo-database'
+import {inject} from 'tschuss'
 
 export class ProductServiceImpl implements ProductService {
   private mlProductService:MLProductService
   private client:Client
 
-  constructor(client:Client, mlProductService:MLProductService) {
+  constructor(client:Client, @inject() mlProductService?) {
     this.client = client
     this.mlProductService = mlProductService
   }

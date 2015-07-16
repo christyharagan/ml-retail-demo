@@ -2,14 +2,14 @@
   "database": {
     "adminUser": "admin",
     "adminPassword": "passw0rd",
-    "host": "christydesktop",
+    "host": "christys-macbook-pro.local",
     "httpPort": 8007,
     "adminPort": 8001,
     "configPort": 8002,
     "database": "retail-demo-content"
   },
   "middle": {
-    "host": "christydesktop",
+    "host": "localhost",
     "port": 8080,
     "listenerPath": "mlListener"
   }
