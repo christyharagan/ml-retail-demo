@@ -14,7 +14,6 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 var ml_uservices_1 = require('ml-uservices');
 var tschuss_1 = require('tschuss');
-exports = {};
 var TwitterTask = (function () {
     function TwitterTask(twitterService) {
         this.twitterService = twitterService;
@@ -56,5 +55,4 @@ var TwitterTask = (function () {
     return TwitterTask;
 })();
 exports.TwitterTask = TwitterTask;
-new TwitterTask().fetchTweets();
 //# sourceMappingURL=twitter.js.map

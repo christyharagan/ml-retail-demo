@@ -45,7 +45,7 @@ export class Login extends React.Component<LoginProps, LoginState> {
 
   registerOnClick(e:Event) {
     if (!this.state.registerDisabled) {
-      this.props.onRegister({
+      this.props.onRegister(<Customer>{
         name: {
           firstName: this.state.registerFirstName,
           lastName: this.state.registerLastName

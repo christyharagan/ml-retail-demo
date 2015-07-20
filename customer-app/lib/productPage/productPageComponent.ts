@@ -53,7 +53,15 @@ export class ProductPage extends React.Component<ProductPageProps, ProductPageSt
   onCategorySelect(category:FacetValue<any>):void {
     this.setState({
       selectedCategory: category
-    }, this.onSearch.bind(this, ''))
+    }, function() {
+      let self = this
+      this.props.productService.searchProducts('', this.state.selectedCategory ? [this.state.selectedCategory] : null).then(function(results){
+        self.setState({
+          primaryState: PrimaryState.SEARCH_RESULT,
+          searchResults: results
+        })
+      })
+    })
   }
 
   onProductSelect(product:Product): void {

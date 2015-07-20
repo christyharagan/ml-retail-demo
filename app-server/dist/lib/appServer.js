@@ -23,6 +23,9 @@ var twitterService_1 = require('./services/twitterService');
 var storeService_1 = require('./services/storeService');
 var ml_retail_demo_database_1 = require('ml-retail-demo-database');
 var tschuss_1 = require('tschuss');
+function add(a, b) {
+    return a + b;
+}
 var koa = require('koa');
 var serve = require('koa-static');
 var io = require('socket.io');

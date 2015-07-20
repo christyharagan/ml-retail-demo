@@ -3,9 +3,6 @@ import {twitterSpec} from '../remoteServiceProxies'
 import {TwitterService, Customer} from 'ml-retail-demo-common'
 import {inject, wired} from 'tschuss'
 
-// TODO Remove this
-exports = {}
-
 @wired(__dirname)
 export class TwitterTask {
   private twitterService: TwitterService
@@ -43,6 +40,3 @@ export class TwitterTask {
     })
   }
 }
-
-// TODO Remove
-new TwitterTask().fetchTweets()

@@ -32,7 +32,15 @@ var ProductPage = (function (_super) {
     ProductPage.prototype.onCategorySelect = function (category) {
         this.setState({
             selectedCategory: category
-        }, this.onSearch.bind(this, ''));
+        }, function () {
+            var self = this;
+            this.props.productService.searchProducts('', this.state.selectedCategory ? [this.state.selectedCategory] : null).then(function (results) {
+                self.setState({
+                    primaryState: PrimaryState.SEARCH_RESULT,
+                    searchResults: results
+                });
+            });
+        });
     };
     ProductPage.prototype.onProductSelect = function (product) {
         this.setState({

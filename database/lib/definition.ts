@@ -1,7 +1,5 @@
 import {ServerSpec, DatabaseSpec, ForestSpec, mlDeploy, contentDatabase, triggersDatabase, modulesDatabase, schemaDatabase, ruleSet} from 'ml-admin'
 import {Config} from 'ml-project'
-//import {RuleSets} from './semantics/rulesets'
-//import {ruleSet} from 'ml-admin'
 import {rule, variable, prefix} from 'speckle'
 
 @mlDeploy()

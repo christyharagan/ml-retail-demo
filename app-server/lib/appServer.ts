@@ -17,6 +17,13 @@ import {StoreServiceImpl} from './services/storeService'
 import {TwitterService, ProductService, createClient, customerServiceProxy, productServiceProxy, twitterServiceProxy} from 'ml-retail-demo-database'
 import {inject, wired} from 'tschuss'
 
+function add(a:number, b:number) {
+  return a + b
+}
+
+//let c = add(1, '2')
+
+
 let koa = require('koa')
 let serve = require('koa-static')
 let io = require('socket.io')
